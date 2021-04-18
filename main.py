@@ -54,6 +54,16 @@ class Linkedlist():
             actual_node = actual_node.next
 
 
+    #method to insert node at any position in the list
+    def insert_at_any(self, data , position):
+        current = self.head
+        new_node = Node(data)
+
+        for i in range(position-1):
+            current = current.next
+        new_node.next = current.next
+        current.next = new_node
+
 L = Linkedlist()
 L.insert_at_start(1)
 L.insert_at_start(2)
@@ -61,8 +71,8 @@ L.insert_at_start(3)
 L.insert_at_start(4)
 L.insert_at_end(3)
 print("length",L.number_of_nodes)
+L.insert_at_any(5,2)
 L.traverse()
-
 
 
 
